@@ -73,7 +73,7 @@ public class MainView extends VBox {
 
             System.out.print(simX + "," + simY);
 
-            this.simulation.board[simX][simY]=drawMode;
+            this.simulation.setState(simX, simY, drawMode);
             draw();
 
         }catch (NonInvertibleTransformException e){

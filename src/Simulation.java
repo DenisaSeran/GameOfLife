@@ -27,13 +27,21 @@ public class Simulation {
     }
 
     public void setAlive(int x, int y) {
-        this.board[x][y] = 1;
+        this.setState(x,y,0);
     }
 
     public void setDead(int x, int y) {
         this.board[x][y] = 0;
     }
 
+    public void setState(int x, int y, int state){
+        if (x < 0 || x >= width) {
+            return ;
+        }
+        if (y < 0 || y >= height) {
+            return ;
+        }
+    }
     public int countAliveNeighbours(int x, int y) {
         int count = 0;
 
@@ -61,9 +69,6 @@ public class Simulation {
         }
         return this.board[x][y];
     }
-
-
-
 
     public void step(){
         int [][] newboard = new int[width][height];
